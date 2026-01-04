@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'; 
 
 // 咨询师数据定义
 const counselors = [
@@ -26,7 +26,7 @@ const counselors = [
 ];
 ---
 
-<Layout title="心理辅导 - 与光同行">
+<BaseLayout title="心理辅导 - 与光同行">
   <section class="py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16">
@@ -92,4 +92,4 @@ const counselors = [
       </div>
     </div>
   </section>
-</Layout>
+</BaseLayout>
