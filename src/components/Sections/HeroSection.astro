@@ -33,9 +33,13 @@ const {
       <p class="text-xl md:text-2xl mb-8">{subtitle}</p>
       
       <div class="flex flex-wrap gap-4">
-        <Button href={ctaLink} <Button href={ctaLink} class="bg-[#D4A373] hover:bg-[#C29262] border-none text-white" size="lg">
-          {ctaText}
-        </Button>
+        <Button 
+  href={ctaLink} 
+  class="bg-[#D4A373] hover:bg-[#C29262] border-none text-white shadow-lg" 
+  size="lg"
+>
+  {ctaText}
+</Button>
         
         <Button href={secondaryCtaLink} variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
           {secondaryCtaText}
