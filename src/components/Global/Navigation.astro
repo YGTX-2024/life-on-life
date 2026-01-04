@@ -25,7 +25,7 @@ const currentPath = Astro.url.pathname;
           <li>
             <a
               href={item.href}
-              class={\text-2xl font-medium transition-colors hover:text-[#D4A373] ${isActive ? "text-[#D4A373]" : "text-[#5C5146]"}`}`
+              class={`text-2xl font-medium transition-colors hover:text-[#D4A373] ${isActive ? "text-[#D4A373]" : "text-[#5C5146]"}`}`
               aria-current={isActive ? "page" : undefined}
             >
               {item.text}
