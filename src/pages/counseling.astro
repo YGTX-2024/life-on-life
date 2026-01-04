@@ -1,95 +1,124 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; 
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// 咨询师数据定义
+// 1. 咨询师数据定义
 const counselors = [
   {
     name: "董元霞",
-    role: "国家二级心理咨询师",
-    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。多年教会侍奉经验，曾任神学院班主任、神学培训讲师。擅长领域：婚姻辅导、青少年辅导、个人生命成长、抑郁焦虑、原生家庭医治及压力管理等。"
+    role: "国家二级心理咨询师 (可预约)",
+    qualifications: [
+      "五年系统的心理咨询训练",
+      "五年的心理辅导经验",
+      "两年学校心理辅导经验",
+      "两年系统的神学训练",
+      "七年的教会侍奉经验"
+    ],
+    specialties: ["抑郁、焦虑情绪疏导", "婚姻亲子辅导", "属灵低谷陪伴与引导"],
+    fees: "区间收费：1-200人民币/每小时。来访者可凭感动和自己的经济能力，与咨询师协商收费标准。",
+    location: "线下新加坡 / 线上",
+    contact: "Teams: YGTX2024@outlook.com",
+    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。曾任神学院班主任、神学培训讲师。"
   },
   {
     name: "王洁",
-    role: "资深辅导师",
-    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。具有丰富的临床辅导与专业培训经验，致力于陪伴生命在真理中重构与成长。"
+    role: "资深辅导师 (可预约)",
+    qualifications: [
+      "资深辅导师资历",
+      "加拿大全人更新协会/生命树宣教网络辅导师、培训员",
+      "具有丰富的临床辅导经验",
+      "专业辅导培训师资历"
+    ],
+    specialties: ["生命重构", "心理辅导与真理整合", "专业辅导培训"],
+    fees: "请咨询确认",
+    location: "线上/线下",
+    contact: "通过平台预约",
+    detail: "致力于陪伴生命在真理中重构与成长。"
   },
   {
     name: "林一",
-    role: "资深辅导师",
-    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。专注于生命整合辅导，在陪伴个体面对生命挑战与属灵成长方面有深厚积淀。"
+    role: "资深辅导师 (可预约)",
+    qualifications: [
+      "资深辅导师资历",
+      "加拿大全人更新协会/生命树宣教网络辅导师、培训员",
+      "专注于生命整合辅导研究"
+    ],
+    specialties: ["生命整合辅导", "属灵成长陪伴", "面对生命挑战"],
+    fees: "请咨询确认",
+    location: "线上/线下",
+    contact: "通过平台预约",
+    detail: "在陪伴个体面对生命挑战与属灵成长方面有深厚积淀。"
   },
   {
     name: "王静",
-    role: "国家三级心理咨询师",
-    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。长期投入心理辅导实践，通过专业视角与信仰关怀，协助来访者探索内在力量。"
+    role: "国家三级心理咨询师 (可预约)",
+    qualifications: [
+      "国家三级心理咨询师",
+      "加拿大全人更新协会/生命树宣教网络辅导师、培训员",
+      "长期心理辅导实践经验"
+    ],
+    specialties: ["专业视角与信仰关怀", "内在力量探索", "情绪支持"],
+    fees: "请咨询确认",
+    location: "线上/线下",
+    contact: "通过平台预约",
+    detail: "协助来访者探索内在力量，达成全人更新。"
   }
+];
+
+// 2. 多渠道联系配置
+const contactMethods = [
+  { label: "微信 (WeChat)", img: "/images/wechat-qr.jpg" },
+  { label: "WhatsApp", img: "/images/whatsapp-qr.jpg" },
+  { label: "Signal", img: "/images/signal-qr.jpg" }
 ];
 ---
 
 <BaseLayout title="心理辅导 - 与光同行">
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-6">
+  
+  <section class="py-20 bg-[#F8F6F4]">
+    <div class="container mx-auto px-6 max-w-5xl">
       <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.3em] mb-4">咨询师团队</h2>
+        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.3em] mb-4">咨询师资历详情</h2>
         <div class="w-12 h-1 bg-[#D4A373] mx-auto"></div>
       </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div class="grid gap-12">
         {counselors.map(person => (
-          <div class="group p-8 rounded-2xl bg-[#FDF8F3] border border-transparent hover:border-[#D4A373]/30 transition-all duration-300">
-            <div class="w-24 h-24 bg-white rounded-full mx-auto mb-6 flex items-center justify-center border border-gray-100 shadow-sm group-hover:scale-105 transition-transform overflow-hidden">
-               <span class="text-[#D4A373] font-bold text-2xl">{person.name[0]}</span>
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+            <div class="bg-[#5C5146] text-white p-8 md:w-1/3 flex flex-col justify-center items-center text-center">
+              <div class="w-24 h-24 bg-white/10 rounded-full mb-4 flex items-center justify-center border border-white/20 text-3xl font-bold">
+                {person.name[0]}
+              </div>
+              <h3 class="text-2xl font-bold mb-2">{person.name}</h3>
+              <p class="text-[#D4A373] text-sm">{person.role}</p>
             </div>
-            <h3 class="text-xl font-bold text-[#5C5146] mb-2">{person.name}</h3>
-            <p class="text-[#D4A373] text-sm font-medium mb-4">{person.role}</p>
-            <p class="text-gray-600 text-sm leading-relaxed text-justify">{person.detail}</p>
+
+            <div class="p-8 md:w-2/3 space-y-6">
+              <div>
+                <h4 class="text-lg font-bold text-[#5C5146] border-b pb-2 mb-3">资质：</h4>
+                <ul class="list-decimal list-inside text-gray-600 space-y-1 text-sm">
+                  {person.qualifications.map(q => <li>{q}</li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-[#5C5146] border-b pb-2 mb-3">擅长领域：</h4>
+                <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                  {person.specialties.map(s => <li>{s}</li>)}
+                </ul>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 text-sm pt-2">
+                <div><span class="font-bold text-[#5C5146]">收费标准：</span><p class="text-gray-600 mt-1">{person.fees}</p></div>
+                <div><span class="font-bold text-[#5C5146]">咨询地点：</span><p class="text-gray-600 mt-1">{person.location}</p></div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-    </div>
-  </section>
 
-  <section class="py-24 bg-[#5C5146] text-white">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <h2 class="text-3xl font-bold mb-10 tracking-[0.3em]">关于心理学与基督教信仰的立场说明</h2>
-      <div class="h-px w-32 bg-[#D4A373]/50 mx-auto mb-12"></div>
-      <div class="space-y-6 text-gray-200 leading-loose text-lg text-justify font-light italic">
-        <p>“与光同行”相信，心理学作为研究人类行为和心理过程的科学，与基督教信仰之间存在着深刻的整合空间。我们认为，心理学的专业技术与圣经对人性的深刻洞察可以相辅相成。</p>
-        <p>我们的服侍立场是：在尊重心理学科学性的同时，坚持以圣经真理为终极准则。我们致力于通过专业辅导与圣灵的引导，陪伴个体在上帝的光中看清生命真相，修复心理创伤，达成全人（身、心、灵）的更新与复原。</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-6 max-w-5xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.2em] mb-4">心理辅导师伦理准则</h2>
-        <p class="text-gray-400 text-sm">诚信 · 尊重 · 保密 · 专业</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12 text-gray-700">
-        <div class="space-y-8">
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">一、专业责任</h3>
-            <p class="leading-relaxed text-sm">辅导师应保持高度的专业水准，认清自身能力的限度。通过持续学习与督导，确保为来访者提供高质量的专业服侍。不得在辅导中宣扬个人偏见或利用辅导关系谋取私利。</p>
-          </div>
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">二、知情同意</h3>
-            <p class="leading-relaxed text-sm">在辅导开始前，需告知来访者辅导的目标、方法、费用及可能存在的局限性，确保辅导关系建立在透明与自愿的基础上。</p>
-          </div>
-        </div>
-
-        <div class="space-y-8">
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">三、保密原则</h3>
-            <p class="leading-relaxed text-sm">严守保密义务，未经来访者授权，不得向第三方透露辅导内容。例外情况：当涉及自伤、伤人或法律强制要求时，辅导师需遵循法律程序进行干预。</p>
-          </div>
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">四、双重关系限制</h3>
-            <p class="leading-relaxed text-sm">辅导师应极力避免与来访者建立辅导以外的社交、经济或亲密关系，以维护辅导的客观性与安全性，防止对来访者造成潜在伤害。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+      <div class="mt-16 bg-white p-10 rounded-2xl border-2 border-dashed border-[#D4A373]/30 text-center">
+        <h3 class="text-2xl font-bold text-[#5C5146] mb-2">预约咨询服务</h3>
+        <p class="text-gray-400 mb-10 text-sm">请扫描下方二维码或联系相应咨询师</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {contactMethods.map(method => (
+            <div class="flex flex-col items-center">
+              <div class="p-3 bg-white shadow-md rounded-lg border mb-4">
+                <img src={method.img} alt={
