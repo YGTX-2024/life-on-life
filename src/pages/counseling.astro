@@ -1,0 +1,109 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+// 咨询师数据：严格提取自附件原文
+const counselors = [
+  {
+    name: "董元霞",
+    role: "国家二级心理咨询师",
+    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。多年教会侍奉经验，曾任神学院班主任、神学培训讲师。擅长领域：婚姻辅导、青少年辅导、个人生命成长、抑郁焦虑、原生家庭医治及压力管理等。"
+  },
+  {
+    name: "王洁",
+    role: "资深辅导师",
+    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。具有丰富的临床辅导与专业培训经验，致力于陪伴生命在真理中重构与成长。"
+  },
+  {
+    name: "林一",
+    role: "资深辅导师",
+    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。专注于生命整合辅导，在陪伴个体面对生命挑战与属灵成长方面有深厚积淀。"
+  },
+  {
+    name: "王静",
+    role: "国家三级心理咨询师",
+    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。长期投入心理辅导实践，通过专业视角与信仰关怀，协助来访者探索内在力量。"
+  }
+];
+---
+
+<MainLayout title="心理辅导 - 与光同行">
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.3em] mb-4">咨询师团队</h2>
+        <div class="w-12 h-1 bg-[#D4A373] mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {counselors.map(person => (
+          <div class="group p-8 rounded-2xl bg-[#FDF8F3] border border-transparent hover:border-[#D4A373]/30 transition-all duration-300">
+            <div class="w-24 h-24 bg-white rounded-full mx-auto mb-6 flex items-center justify-center border border-gray-100 shadow-sm group-hover:scale-105 transition-transform overflow-hidden">
+               <img src={`/images/counselors/${person.name}.jpg`} alt={person.name} class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+               <span class="hidden text-[#D4A373] font-bold">{person.name[0]}</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#5C5146] mb-2">{person.name}</h3>
+            <p class="text-[#D4A373] text-sm font-medium mb-4">{person.role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed text-justify">{person.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-[#5C5146] text-white">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold mb-10 tracking-[0.3em]">关于心理学与基督教信仰的立场说明</h2>
+      <div class="h-px w-32 bg-[#D4A373]/50 mx-auto mb-12"></div>
+      <div class="space-y-6 text-gray-200 leading-loose text-lg text-justify font-light italic">
+        <p> “与光同行”相信，心理学作为研究人类行为和心理过程的科学，与基督教信仰之间存在着深刻的整合空间。我们认为，心理学的专业技术与圣经对人性的深刻洞察可以相辅相成。</p>
+        <p> 我们的服侍立场是：在尊重心理学科学性的同时，坚持以圣经真理为终极准则。我们致力于通过专业辅导与圣灵的引导，陪伴个体在上帝的光中看清生命真相，修复心理创伤，达成全人（身、心、灵）的更新与复原。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.2em] mb-4">与光同行·心理辅导师伦理准则</h2>
+        <p class="text-gray-400 text-sm">诚信 · 尊重 · 保密 · 专业</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 text-gray-700">
+        <div class="space-y-8">
+          <div class="border-l-4 border-[#D4A373] pl-6">
+            <h3 class="text-xl font-bold text-[#5C5146] mb-3">一、专业责任</h3>
+            <p class="leading-relaxed text-sm">辅导师应保持高度的专业水准，认清自身能力的限度。通过持续学习与督导，确保为来访者提供高质量的专业服侍。不得在辅导中宣扬个人偏见或利用辅导关系谋取私利。</p>
+          </div>
+          <div class="border-l-4 border-[#D4A373] pl-6">
+            <h3 class="text-xl font-bold text-[#5C5146] mb-3">二、知情同意</h3>
+            <p class="leading-relaxed text-sm">在辅导开始前，需告知来访者辅导的目标、方法、费用及可能存在的局限性，确保辅导关系建立在透明与自愿的基础上。</p>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="border-l-4 border-[#D4A373] pl-6">
+            <h3 class="text-xl font-bold text-[#5C5146] mb-3">三、保密原则</h3>
+            <p class="leading-relaxed text-sm">严守保密义务，未经来访者授权，不得向第三方透露辅导内容。例外情况：当涉及自伤、伤人或法律强制要求时，辅导师需遵循法律程序进行干预。</p>
+          </div>
+          <div class="border-l-4 border-[#D4A373] pl-6">
+            <h3 class="text-xl font-bold text-[#5C5146] mb-3">四、双重关系限制</h3>
+            <p class="leading-relaxed text-sm">辅导师应极力避免与来访者建立辅导以外的社交、经济或亲密关系，以维护辅导的客观性与安全性，防止对来访者造成潜在伤害。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-20 p-8 rounded-xl bg-[#FDF8F3] text-center border border-dashed border-[#D4A373]/30">
+        <p class="text-[#5C5146] mb-6">如需预约辅导或咨询详情，请点击下方按钮：</p>
+        <a href="/contact" class="inline-block px-10 py-3 bg-[#D4A373] text-white rounded-full font-bold hover:bg-[#C29262] transition-colors shadow-lg">预约咨询</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* 确保正文两端对齐，增加呼吸感 */
+  .text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+</style>
