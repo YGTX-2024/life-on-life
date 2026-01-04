@@ -15,9 +15,9 @@ const {
   title = "Welcome to Our Church",
   subtitle = "A place of worship, community, and spiritual growth",
   backgroundImage = "/uploads/hero-bg.jpg",
-  ctaText = "Plan Your Visit",
+  ctaText = "心理辅导",
   ctaLink = "/im-new",
-  secondaryCtaText = "Watch Sermons",
+  secondaryCtaText = "全人更新",
   secondaryCtaLink = "/sermons",
 } = Astro.props;
 ---
@@ -32,19 +32,23 @@ const {
       <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">{title}</h1>
       <p class="text-xl md:text-2xl mb-8">{subtitle}</p>
       
-      <div class="flex flex-wrap gap-4">
+     <div class="flex flex-wrap gap-4">
         <Button 
-  href={ctaLink} 
-  class="bg-[#D4A373] hover:bg-[#C29262] border-none text-white shadow-lg" 
-  size="lg"
->
-  {ctaText}
-</Button>
-        
-        <Button href={secondaryCtaLink} variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
+          href={ctaLink} 
+          class="bg-[#D4A373] hover:bg-[#C29262] border-none text-white shadow-lg" 
+          size="lg"
+        >
+          {ctaText}
+        </Button>
+
+        <Button 
+          href={secondaryCtaLink} 
+          variant="outline" 
+          size="lg" 
+          class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm"
+        >
           {secondaryCtaText}
         </Button>
       </div>
-    </div>
   </div>
 </section>
