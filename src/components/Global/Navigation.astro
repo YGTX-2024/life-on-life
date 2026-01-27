@@ -8,7 +8,7 @@ const counselors = await getCollection('counselors');
 const navItems = [
   { text: "主页", href: "/" },
   { text: "关于我们", href: "/关于我们" },
-  { text: "心理辅导", href: "/counseling", hasDropdown: true }, // 标记需要下拉
+  { text: "心理辅导", href: "/counseling", hasDropdown: true },
   { text: "全人更新", href: "/renewal" },
   { text: "资源推荐", href: "/blog" },
   { text: "奉献支持", href: "/奉献支持" },
@@ -24,42 +24,41 @@ const currentPath = Astro.url.pathname;
         const isActive = currentPath === item.href || 
                          (item.href !== "/" && currentPath.startsWith(item.href));
         
-        // 如果是心理辅导，渲染下拉菜单
         if (item.hasDropdown) {
           return (
-            <li class="relative group">
-              <a
+            <li class="relative group py-4"> <a
                 href={item.href}
                 class={`text-2xl font-medium transition-colors hover:text-[#D4A373] flex items-center gap-1 ${
                   isActive ? "text-[#D4A373]" : "text-[#5C5146]"
                 }`}
               >
                 {item.text}
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </a>
               
-              <ul class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-xl rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <li>
-                  <a href="/counseling" class="block px-5 py-2 text-base text-gray-700 hover:bg-[#F9F4EF] hover:text-[#D4A373]">
-                    辅导立场与伦理
-                  </a>
-                </li>
-                <div class="border-t border-gray-50 my-1"></div>
-                {counselors.sort((a,b) => (a.data.order || 99) - (b.data.order || 99)).map(c => (
+              <div class="absolute left-0 pt-2 hidden group-hover:block z-50">
+                <ul class="w-60 bg-white border border-gray-100 shadow-2xl rounded-2xl py-3 overflow-hidden">
                   <li>
-                    <a href={`/counselors/${c.slug}`} class="block px-5 py-2 text-base text-gray-700 hover:bg-[#F9F4EF] hover:text-[#D4A373]">
-                      咨询师：{c.data.name}
+                    <a href="/counseling" class="block px-6 py-3 text-lg text-gray-700 hover:bg-[#F9F4EF] hover:text-[#D4A373] transition-colors">
+                      辅导立场与伦理
                     </a>
                   </li>
-                ))}
-              </ul>
+                  <div class="border-t border-gray-100 my-1"></div>
+                  {counselors.sort((a,b) => (a.data.order || 99) - (b.data.order || 99)).map(c => (
+                    <li>
+                      <a href={`/counselors/${c.slug}`} class="block px-6 py-3 text-lg text-gray-700 hover:bg-[#F9F4EF] hover:text-[#D4A373] transition-colors">
+                        咨询师：{c.data.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </li>
           );
         }
 
-        // 普通导航项
         return (
           <li>
             <a
@@ -92,34 +91,23 @@ const currentPath = Astro.url.pathname;
 <div
   id="mobile-menu"
   class="absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-100 transform scale-y-0 origin-top transition-transform duration-200 ease-out lg:hidden z-50"
-  role="menu"
 >
   <div class="px-4 py-6">
     <div class="grid grid-cols-2 gap-3">
       {
-        navItems.map((item) => {
-          const isActive = currentPath === item.href || 
-                           (item.href !== "/" && currentPath.startsWith(item.href));
-          
-          return (
-            <a
-              href={item.href}
-              class={`block px-4 py-3 text-sm font-medium rounded-lg transition-colors text-center ${
-                isActive 
-                  ? "bg-[#F9F4EF] text-[#D4A373] border border-[#D4A373]/20" 
-                  : "text-gray-700 hover:bg-gray-50 border border-transparent"
-              }`}
-              role="menuitem"
-            >
-              {item.text}
-            </a>
-          );
-        })
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="block px-4 py-3 text-sm font-medium rounded-lg text-gray-700 bg-gray-50 text-center"
+          >
+            {item.text}
+          </a>
+        ))
       }
       {counselors.map(c => (
         <a 
           href={`/counselors/${c.slug}`}
-          class="block px-4 py-3 text-sm font-medium rounded-lg text-gray-600 bg-gray-50 border border-transparent text-center"
+          class="block px-4 py-3 text-sm font-medium rounded-lg text-[#D4A373] bg-[#F9F4EF] border border-[#D4A373]/20 text-center"
         >
           {c.data.name}
         </a>
@@ -129,12 +117,20 @@ const currentPath = Astro.url.pathname;
 </div>
 
 <style>
-  #mobile-menu-button:hover svg { transform: scale(1.1); }
-  #mobile-menu-button svg { transition: transform 0.2s ease; }
   #mobile-menu.show { transform: scaleY(1); }
-  #mobile-menu a { transition: all 0.15s ease; }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenu
+  const setupMenu = () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (!mobileMenuButton || !mobileMenu) return;
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isShow = mobileMenu.classList.toggle('show');
+      mobileMenuButton.setAttribute('aria-expanded', isShow.toString());
+    });
+  };
+  setupMenu();
+  document.addEventListener('astro:after-swap', setupMenu);
+</script>
