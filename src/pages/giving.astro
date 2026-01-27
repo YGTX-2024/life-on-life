@@ -1,15 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHeader from "../components/Sections/PageHeader.astro";
-import Button from "../components/UI/Button.astro";
----
----
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="奉献支持">
   <main class="bg-[#F9F4EF] min-h-screen py-20 px-4">
-    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-sm p-8 md:p-16">
+    <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-sm p-8 md:p-16 border border-gray-100">
       
       <div class="text-center mb-12">
         <h1 class="text-3xl md:text-4xl font-bold text-[#5C5146] mb-4">奉献支持</h1>
@@ -18,16 +13,19 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="space-y-8 text-lg text-gray-700 leading-loose">
         <p class="text-center font-medium text-xl">
-          若天父给您感动，希望奉献支持，请联系 <span class="text-[#D4A373]">Neo小盐弟兄</span>。
+          若天父给您感动，希望奉献支持，请联系 <span class="text-[#D4A373] font-bold">Neo小盐弟兄</span>。
         </p>
         
-        <div class="bg-[#FDFBF9] border-l-4 border-[#D4A373] p-6 italic">
+        <div class="bg-[#FDFBF9] border-l-4 border-[#D4A373] p-6 italic rounded-r-lg">
           您的奉献会匿名公布。
         </div>
 
         <div>
-          <h3 class="font-bold text-[#5C5146] mb-2">奉献用途：</h3>
-          <ul class="list-disc pl-5 space-y-2">
+          <h3 class="font-bold text-[#5C5146] mb-4 flex items-center gap-2">
+            <span class="w-1 h-5 bg-[#D4A373]"></span>
+            奉献用途：
+          </h3>
+          <ul class="list-disc pl-8 space-y-2">
             <li>支持平台的行政开支。</li>
             <li>补贴咨询师辅导费用。</li>
             <li>支持在“没有听过的福音地区”的宣教事工。</li>
@@ -38,33 +36,30 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
           <h3 class="text-xl font-bold text-[#5C5146] mb-6 text-center">奉献动机的确认</h3>
-          <p class="mb-6">请确认您的奉献动机是为了<strong>回应上帝的救恩</strong>。</p>
+          <p class="mb-6 text-center text-gray-600">请确认您的奉献动机是为了 <strong>回应上帝的救恩</strong>。</p>
           
-          <p class="text-[#D4A373] font-medium mb-4">请避免以下三种动机：</p>
+          <p class="text-[#D4A373] font-medium mb-6 text-center">请避免以下三种动机：</p>
           
           <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white p-4 rounded-xl shadow-sm">
-              <strong class="block text-red-400 mb-1">1. 恐惧</strong>
-              <span class="text-sm text-gray-500 italic">“如果不奉献，上帝会惩罚我。”</span>
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-red-50 text-center">
+              <strong class="block text-red-400 mb-2">1. 恐惧</strong>
+              <p class="text-sm text-gray-500 italic leading-relaxed">“如果不奉献，上帝会惩罚我。”</p>
             </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm">
-              <strong class="block text-red-400 mb-1">2. 交易</strong>
-              <span class="text-sm text-gray-500 italic">“如果我奉献，上帝会让我赚更多钱。”</span>
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-red-50 text-center">
+              <strong class="block text-red-400 mb-2">2. 交易</strong>
+              <p class="text-sm text-gray-500 italic leading-relaxed">“如果我奉献，上帝会让赚更多钱。”</p>
             </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm">
-              <strong class="block text-red-400 mb-1">3. 自我</strong>
-              <span class="text-sm text-gray-500 italic">“我有钱，奉献让我体验到有价值。”</span>
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-red-50 text-center">
+              <strong class="block text-red-400 mb-2">3. 自我</strong>
+              <p class="text-sm text-gray-500 italic leading-relaxed">“我有钱，奉献让我体验到有价值。”</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-12 text-center text-gray-500 text-sm">
+      <div class="mt-12 text-center text-gray-400 text-sm">
         如有疑问，请通过平台联系方式咨询
       </div>
     </div>
   </main>
 </Layout>
-    </div>
-  </section>
-</BaseLayout>
