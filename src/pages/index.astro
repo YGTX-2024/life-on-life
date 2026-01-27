@@ -26,23 +26,31 @@ import Button from "../components/UI/Button.astro";
         <div class="w-12 h-1 bg-primary-600 mx-auto mt-2"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-primary-400">
-          <div class="flex items-center mb-4">
-            <h3 class="text-xl font-bold text-gray-800">正在筹备</h3>
-          </div>
-          <ul class="space-y-2 text-gray-600">
-            <li>•《个人成长初阶：恩典全开》</li>
-          </ul>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-500">
-          <div class="flex items-center mb-4">
-            <h3 class="text-xl font-bold text-gray-800">正在进行</h3>
-          </div>
-          <ul class="space-y-2 text-gray-600">
-            <li class="font-medium text-primary-700">▶ 心理辅导</li>
-          </ul>
-        </div>
-      </div>
+  <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-primary-500">
+    <div class="flex items-center mb-4">
+      <span class="bg-primary-50 text-primary-700 text-xs font-bold px-2.5 py-0.5 rounded mr-2">筹备中</span>
+      <h3 class="text-xl font-bold text-gray-800">正在筹备</h3>
+    </div>
+    <ul class="space-y-3 text-gray-600">
+      <li class="flex items-start">
+        <span class="text-primary-500 mr-2">📅</span> <span>《个人成长初阶：恩典全开》</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-500">
+    <div class="flex items-center mb-4">
+      <span class="bg-green-50 text-green-700 text-xs font-bold px-2.5 py-0.5 rounded mr-2">进行中</span>
+      <h3 class="text-xl font-bold text-gray-800">正在进行</h3>
+    </div>
+    <ul class="space-y-3 text-gray-600">
+      <li class="flex items-start font-medium text-gray-800">
+        <span class="text-green-500 mr-2">🌱</span>
+        <span>心理辅导</span>
+      </li>
+    </ul>
+  </div>
+</div>
     </div>
   </div>
 </section>
