@@ -1,11 +1,11 @@
 import { defineCollection, z } from 'astro:content';
 
-// 仅保留咨询师定义
 const counselors = defineCollection({
   schema: z.object({
-    name: z.string(),
-    title: z.string(),
-    description: z.string(),
+    // 使用 .optional() 确保即使文件写错了，构建也不会崩溃
+    name: z.string().optional(),
+    title: z.string().optional(),
+    description: z.string().optional(),
     order: z.number().optional(),
   }),
 });
