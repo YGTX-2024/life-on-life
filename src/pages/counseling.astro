@@ -1,176 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// 1. 咨询师数据定义
-const counselors = [
-  {
-    name: "董元霞",
-    role: "国家二级心理咨询师 (可预约)",
-    qualifications: [
-      "五年系统的心理咨询训练",
-      "五年的心理辅导经验",
-      "两年学校心理辅导经验",
-      "两年系统的神学训练",
-      "七年的教会侍奉经验"
-    ],
-    specialties: ["抑郁、焦虑情绪疏导", "婚姻亲子辅导", "属灵低谷陪伴与引导"],
-    fees: "区间收费：1-200人民币/每小时。来访者可凭感动和自己的经济能力，与咨询师协商收费标准。",
-    location: "线下新加坡 / 线上",
-    contact: "Teams: YGTX2024@outlook.com",
-    detail: "加拿大全人更新协会/生命树宣教网络辅导师、培训员。曾任神学院班主任、神学培训讲师。"
-  },
-  {
-    name: "王洁",
-    role: "资深辅导师 (可预约)",
-    qualifications: [
-      "资深辅导师资历",
-      "加拿大全人更新协会/生命树宣教网络辅导师、培训员",
-      "具有丰富的临床辅导经验",
-      "专业辅导培训师资历"
-    ],
-    specialties: ["生命重构", "心理辅导与真理整合", "专业辅导培训"],
-    fees: "请咨询确认",
-    location: "线上/线下",
-    contact: "通过平台预约",
-    detail: "致力于陪伴生命在真理中重构与成长。"
-  },
-  {
-    name: "林一",
-    role: "资深辅导师 (可预约)",
-    qualifications: [
-      "资深辅导师资历",
-      "加拿大全人更新协会/生命树宣教网络辅导师、培训员",
-      "专注于生命整合辅导研究"
-    ],
-    specialties: ["生命整合辅导", "属灵成长陪伴", "面对生命挑战"],
-    fees: "请咨询确认",
-    location: "线上/线下",
-    contact: "通过平台预约",
-    detail: "在陪伴个体面对生命挑战与属灵成长方面有深厚积淀。"
-  },
-  {
-    name: "王静",
-    role: "国家三级心理咨询师 (可预约)",
-    qualifications: [
-      "国家三级心理咨询师",
-      "加拿大全人更新协会/生命树宣教网络辅导师、培训员",
-      "长期心理辅导实践经验"
-    ],
-    specialties: ["专业视角与信仰关怀", "内在力量探索", "情绪支持"],
-    fees: "请咨询确认",
-    location: "线上/线下",
-    contact: "通过平台预约",
-    detail: "协助来访者探索内在力量，达成全人更新。"
-  }
-];
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">心理学与基督教信仰的立场</h2>
+      <div class="w-16 h-1 bg-primary-600 mx-auto"></div>
+    </div>
 
-// 2. 多渠道联系配置
-const contactMethods = [
-  { label: "微信 (WeChat)", img: "/images/wechat-qr.jpg" },
-  { label: "WhatsApp", img: "/images/whatsapp-qr.jpg" },
-  { label: "Signal", img: "/images/signal-qr.jpg" }
-];
----
-
-<BaseLayout title="心理辅导 - 与光同行">
-  
-  <section class="py-20 bg-[#F8F6F4]">
-    <div class="container mx-auto px-6 max-w-5xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.3em] mb-4">咨询师资历详情</h2>
-        <div class="w-12 h-1 bg-[#D4A373] mx-auto"></div>
+    <div class="space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-stone-50 rounded-xl border-l-4 border-primary-500 shadow-sm">
+          <p class="text-gray-700 leading-relaxed">
+            <span class="font-bold text-primary-700 mr-2">01</span>
+            我们坚守纯正的福音是心灵最有效的解药，圣灵的重生是最彻底的心灵塑造，上帝是最伟大的心理咨询师。
+          </p>
+        </div>
+        <div class="p-6 bg-stone-50 rounded-xl border-l-4 border-primary-500 shadow-sm">
+          <p class="text-gray-700 leading-relaxed">
+            <span class="font-bold text-primary-700 mr-2">02</span>
+            在基督教心理辅导中，我们相信圣经、圣灵、肢体关系和祷告是基督徒独有的具有强大威力的心意更新途径。
+          </p>
+        </div>
+        <div class="p-6 bg-stone-50 rounded-xl border-l-4 border-primary-500 shadow-sm">
+          <p class="text-gray-700 leading-relaxed">
+            <span class="font-bold text-primary-700 mr-2">03</span>
+            心理咨询理论都有各自的哲学预设，这些预设不是真理，我们要通过圣经标准来辨别和筛选。
+          </p>
+        </div>
+        <div class="p-6 bg-stone-50 rounded-xl border-l-4 border-primary-500 shadow-sm">
+          <p class="text-gray-700 leading-relaxed">
+            <span class="font-bold text-primary-700 mr-2">04</span>
+            在不违背圣经权威的前提下，我们会使用一部分心理学知识和技能，目的是将人引向基督。
+          </p>
+        </div>
       </div>
 
-      <div class="grid gap-12">
-        {counselors.map(person => (
-          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
-            <div class="bg-[#5C5146] text-white p-8 md:w-1/3 flex flex-col justify-center items-center text-center">
-              <div class="w-24 h-24 bg-white/10 rounded-full mb-4 flex items-center justify-center border border-white/20 text-3xl font-bold">
-                {person.name[0]}
-              </div>
-              <h3 class="text-2xl font-bold mb-2">{person.name}</h3>
-              <p class="text-[#D4A373] text-sm">{person.role}</p>
-            </div>
+      <div class="mt-8 p-6 bg-primary-50 border border-primary-100 rounded-2xl">
+        <p class="text-sm text-primary-900 leading-relaxed">
+          <span class="font-bold">备注：</span>我们的主要立场是<span class="underline decoration-primary-300 underline-offset-4 font-bold">整合观</span>，结合信仰与心理学做辅导（参考《心理学与基督教：五种观点》）。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="p-8 md:w-2/3 space-y-6">
-              <div>
-                <h4 class="text-lg font-bold text-[#5C5146] border-b pb-2 mb-3">资质：</h4>
-                <ul class="list-decimal list-inside text-gray-600 space-y-1 text-sm">
-                  {person.qualifications.map(q => <li>{q}</li>)}
-                </ul>
-              </div>
-              <div>
-                <h4 class="text-lg font-bold text-[#5C5146] border-b pb-2 mb-3">擅长领域：</h4>
-                <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
-                  {person.specialties.map(s => <li>{s}</li>)}
-                </ul>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 text-sm pt-2">
-                <div><span class="font-bold text-[#5C5146]">收费标准：</span><p class="text-gray-600 mt-1">{person.fees}</p></div>
-                <div><span class="font-bold text-[#5C5146]">咨询地点：</span><p class="text-gray-600 mt-1">{person.location}</p></div>
-              </div>
-            </div>
+<section class="py-16 bg-stone-50 border-t border-gray-100">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">心理辅导师伦理准则</h2>
+      <p class="text-gray-500 italic">“愿我们以真理束腰，以爱心服侍”</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+      <div class="space-y-8">
+        <div class="flex gap-4 items-start">
+          <div class="w-8 h-8 rounded bg-primary-600 text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-md">1</div>
+          <p class="text-gray-700 leading-relaxed">我们愿意以爱心、圣经真理及心理咨询技能为弟兄姐妹提供心理辅导，并尊重每一个人的隐私。</p>
+        </div>
+
+        <div class="flex gap-4 items-start">
+          <div class="w-8 h-8 rounded bg-primary-600 text-white flex items-center justify-center flex-shrink-0 mt-1 shadow-md">2</div>
+          <p class="text-gray-700 leading-relaxed">我们提供以福音为中心的全人关怀，目的是将当事人带到神面前，经历生命的更新，最终将荣耀归于神。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
+          <div class="p-4 bg-orange-50 rounded-lg border border-orange-200">
+            <h4 class="font-bold text-orange-900 mb-2 text-sm uppercase tracking-wide">关于多重关系</h4>
+            <p class="text-xs text-orange-800 leading-relaxed">持兼容态度。若涉及多重关系，将向当事人说明影响并经过祷告决定，且邀请同辈定期监察。</p>
           </div>
-        ))}
-      </div>
+          <div class="p-4 bg-orange-50 rounded-lg border border-orange-200">
+            <h4 class="font-bold text-orange-900 mb-2 text-sm uppercase tracking-wide">性别规避原则</h4>
+            <p class="text-xs text-orange-800 leading-relaxed">线下咨询尽量同性进行。若遇异性咨询，必邀请团队同工监察并采取规避试探的措施。严禁性关系。</p>
+          </div>
+        </div>
 
-      <div class="mt-16 bg-white p-10 rounded-2xl border-2 border-dashed border-[#D4A373]/30 text-center">
-        <h3 class="text-2xl font-bold text-[#5C5146] mb-2">预约咨询服务</h3>
-        <p class="text-gray-400 mb-10 text-sm">请扫描下方二维码或联系相应咨询师</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {contactMethods.map(method => (
-            <div class="flex flex-col items-center">
-              <div class="p-3 bg-white shadow-md rounded-lg border mb-4">
-                <img src={method.img} alt={method.label} class="w-32 h-32 object-cover" />
-              </div>
-              <span class="text-sm font-bold text-[#5C5146]">{method.label}</span>
-            </div>
-          ))}
+        <div class="text-center pt-6 border-t border-gray-100">
+          <p class="text-sm text-gray-400 font-medium tracking-widest">— 与光同行团队 恪守奉行 —</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="py-24 bg-[#5C5146] text-white">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <h2 class="text-3xl font-bold mb-10 tracking-[0.3em]">关于心理学与基督教信仰的立场说明</h2>
-      <div class="h-px w-32 bg-[#D4A373]/50 mx-auto mb-12"></div>
-      <div class="space-y-6 text-gray-200 leading-loose text-lg text-justify font-light italic">
-        <p>“与光同行”相信，心理学作为研究人类行为和心理过程的科学，与基督教信仰之间存在着深刻的整合空间。我们认为，心理学的专业技术与圣经对人性的深刻洞察可以相辅相成。</p>
-        <p>我们的服侍立场是：在尊重心理学科学性的同时，坚持以圣经真理为终极准则。我们致力于通过专业辅导与圣灵的引导，陪伴个体在上帝的光中看清生命真相，修复心理创伤，达成全人（身、心、灵）的更新与复原。</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-6 max-w-5xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-[#5C5146] tracking-[0.2em] mb-4">心理辅导师伦理准则</h2>
-        <p class="text-gray-400 text-sm">诚信 · 尊重 · 保密 · 专业</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-12 text-gray-700">
-        <div class="space-y-8">
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">一、专业责任</h3>
-            <p class="leading-relaxed text-sm">辅导师应保持高度的专业水准，认清自身能力的限度。通过持续学习与督导，确保为来访者提供高质量的专业服侍。</p>
-          </div>
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">二、知情同意</h3>
-            <p class="leading-relaxed text-sm">在辅导开始前，需告知来访者辅导的目标、方法、费用及局限性，确保辅导建立在透明与自愿的基础上。</p>
-          </div>
-        </div>
-        <div class="space-y-8">
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">三、保密原则</h3>
-            <p class="leading-relaxed text-sm">严守保密义务，未经授权不得透露辅导内容。例外情况：涉及自伤、伤人或法律强制要求时，需遵循法律程序。</p>
-          </div>
-          <div class="border-l-4 border-[#D4A373] pl-6">
-            <h3 class="text-xl font-bold text-[#5C5146] mb-3">四、双重关系限制</h3>
-            <p class="leading-relaxed text-sm">辅导师应避免与来访者建立辅导以外的社交、经济或亲密关系，以维护辅导的客观性与安全性。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
+</section>
 </BaseLayout>
