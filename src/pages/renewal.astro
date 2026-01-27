@@ -36,43 +36,44 @@ import Layout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <section class="py-20 bg-white/50 border-y border-[#D4A373]/10">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-[#5C5146] text-center mb-16">以福音为中心的全人更新模型</h2>
-        
-        <div class="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-20">
-          
-          <div class="flex-1 space-y-4 max-w-sm">
-            <div class="flex items-start gap-3">
-              <span class="text-[#D4A373] mt-1">➤</span>
-              <p class="text-[#5C5146] leading-relaxed">基于福音，通过研读圣经和属灵操练，寻求神的心意，并与神同行。</p>
-            </div>
-          </div>
-
-          <div class="relative w-72 h-72 md:w-96 md:h-96 flex-shrink-0">
-                        <svg viewBox="0 0 400 400" class="w-full h-full drop-shadow-xl">
-              <circle cx="200" cy="200" r="180" fill="#F3E5F5" /> <path d="M 200,200 L 200,20 A 180,180 0 0 1 370,260 Z" fill="#FBE9E7" /> <path d="M 200,200 L 40,300 A 180,180 0 0 0 200,380 Z" fill="#E8F5E9" /> <circle cx="200" cy="200" r="110" fill="#E1F5FE" stroke="white" stroke-width="4"/>
-              
-              <circle cx="200" cy="200" r="45" fill="#FFF9C4" />
-              
-              <text x="200" y="205" text-anchor="middle" class="text-sm font-bold fill-[#5C5146]">福音</text>
-              <text x="200" y="275" text-anchor="middle" class="text-xs font-bold fill-[#5C5146]">人与神的关系</text>
-              <text x="130" y="150" transform="rotate(-45, 130, 150)" class="text-xs font-bold fill-[#5C5146]">人与人的关系</text>
-              <text x="280" y="170" transform="rotate(45, 280, 170)" class="text-xs font-bold fill-[#5C5146]">人与环境的关系</text>
-              <text x="160" y="340" class="text-xs font-bold fill-[#5C5146]">人与自我的关系</text>
-            </svg>
-          </div>
-
-          <div class="flex-1 space-y-4 max-w-sm">
-            <div class="flex items-start gap-3">
-              <span class="text-[#D4A373] mt-1">➤</span>
-              <p class="text-[#5C5146] leading-relaxed">按着圣经的原则和圣灵的带领，更新与他人的关系、与自我的关系，以及与外在环境的关系。</p>
-            </div>
-          </div>
-
+    <section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-[#5C5146] text-center mb-16">以福音为中心的全人更新模型</h2>
+    
+    <div class="grid md:grid-cols-[1fr_auto_1fr] items-center gap-8 lg:gap-16">
+      
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <span class="text-[#D4A373] text-2xl">➤</span>
+          <p class="text-lg text-[#5C5146] leading-relaxed pt-1">
+            基于福音，通过研读圣经和属灵操练，寻求神的心意，并与神同行。
+          </p>
         </div>
       </div>
-    </section>
+
+      <div class="w-full max-w-[450px] mx-auto">
+        <div class="relative">
+          <div class="absolute inset-0 bg-[#D4A373]/5 blur-3xl rounded-full"></div>
+          <img 
+            src="/uploads/renewal-model.png" 
+            alt="全人更新模型" 
+            class="relative z-10 w-full h-auto drop-shadow-md"
+          />
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <span class="text-[#D4A373] text-2xl">➤</span>
+          <p class="text-lg text-[#5C5146] leading-relaxed pt-1">
+            按着圣经的原则和圣灵的带领，更新与他人的关系、与自我的关系，以及与外在环境的关系。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   </main>
 </Layout>
