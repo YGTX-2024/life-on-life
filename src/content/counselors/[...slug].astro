@@ -1,1 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro'; // 根据你项目的实际 Layout 路径调整
 
+export async function getStaticPaths() {
+  const entries = await getCollection('counselors');
+  return entries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.name}>
+  <section class="container mx-auto py-10">
+    <img src={entry.data.avatar} alt={entry.data.name} class="w-32 h-32 rounded-full" />
+    <h1 class="text-3xl font-bold">{entry.data.name}</h1>
+    <p class="text-gray-600">{entry.data.title}</p>
+    <hr class="my-6" />
+    <article class="prose lg:prose-xl">
+      <Content /> </article>
+  </section>
+</Layout>
