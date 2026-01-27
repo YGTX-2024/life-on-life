@@ -1,7 +1,6 @@
 ---
 name: "Neo小盐弟兄"
 title: "心理辅导硕士 | 资深心理咨询师"
-avatar: "/images/counselors/neo.jpg"
 order: 1
 description: "专注于全人成长规划、情绪疏导及属灵低谷陪伴。"
 ---
