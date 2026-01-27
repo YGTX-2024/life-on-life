@@ -1,7 +1,6 @@
 ---
 name: "若阳弟兄"
 title: "心理咨询师 | 传统神学架构持守者"
-avatar: "/images/counselors/ruoyang.jpg"
 order: 2
 description: "专注于抑郁焦虑疏导与个人成长探索，持守圣经、传统、理性、经验的神学框架。"
 ---
