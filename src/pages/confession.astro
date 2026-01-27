@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+---
+
+<Layout title="信仰告白">
+  <main class="bg-[#F9F4EF] min-h-screen py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-[2rem] shadow-sm overflow-hidden border border-gray-100">
+        
+        <div class="h-2 bg-[#D4A373]"></div>
+
+        <div class="p-8 md:p-16">
+          <div class="text-center mb-16">
+            <h1 class="text-3xl md:text-4xl font-bold text-[#5C5146] mb-4">信仰告白</h1>
+            <div class="w-12 h-1 bg-[#D4A373]/30 mx-auto mb-4"></div>
+            <p class="text-[#D4A373] font-medium tracking-widest text-sm uppercase">Statement of Faith</p>
+          </div>
+
+          <section class="mb-16 bg-[#FDFBF9] p-8 rounded-2xl border border-gray-50 italic text-gray-700 leading-relaxed text-center">
+            我们接受历代正统信经，如：《使徒信经》《尼西亚信经》《迦克顿信经》《亚他那修信经》；除此之外，我们接受《芝加哥圣经无误宣言》《芝加哥释经宣言》《洛桑信约》。
+          </section>
+
+          <div class="space-y-10">
+            {[
+              "我们相信圣经是神的话语，是最高的权威。",
+              "我们相信三位一体的真神，祂创造了世界及所有。",
+              "我们相信人有神的形象和样式，却因为始祖亚当的堕落继承了罪性并被其奴役，行事为人偏离神的旨意。",
+              "我们相信罪人没有任何能力拯救自我，应有的结局是神的义怒与审判。",
+              "我们相信唯有耶稣是人类的救主，祂为人类的过犯死在十字架上，并于三天后复活，胜过了死亡及一切的黑暗权势，为人类带来永恒的光明。",
+              "我们相信，救恩完全是神的工作，每个罪人若要得救，需要因信称义。",
+              "我们相信神呼召所有的信徒依靠圣灵而活，并像耶稣一样带领门徒。",
+              "我们相信教会是信徒的共同体，耶稣基督是教会的元首，教会为了神的荣耀和信徒的益处而设置，信徒不可轻看教会、停止聚会。",
+              "我们相信耶稣会以可见的、公开的方式再来，审判世界。",
+              "我们相信身体复活，新天新地。"
+            ].map((text, index) => (
+              <div class="flex items-start gap-4 group">
+                <span class="text-[#D4A373] font-serif italic text-xl opacity-50">{(index + 1).toString().padStart(2, '0')}</span>
+                <p class="text-lg text-[#5C5146] leading-relaxed group-hover:text-black transition-colors">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <footer class="mt-20 pt-10 border-t border-gray-100 space-y-4 text-sm text-gray-500">
+            <p><strong>注1：</strong> 此处被圣灵充满是指传统意义上的意思，指被圣灵掌管，对应我们的一面就是，愿意顺服圣灵的掌管与引导。</p>
+            <p><strong>注2：</strong> 我们不否认说方言、医病赶鬼的圣灵恩赐，但是我们认为这类恩赐需要辨别，需要按照圣经的原则使用，不能高过与上帝的关系。</p>
+            <p><strong>注3：</strong> 我们认为以下都是错误的：要求或暗示人人都要说方言；没有翻方言的恩赐时在聚会公开讲方言；通过快速念哈利路亚学方言。</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
