@@ -2,8 +2,12 @@
 import { getCollection } from 'astro:content';
 
 // 获取所有咨询师资料
-const counselors = await getCollection('counselors');
-
+let counselors = [];
+try {
+  counselors = await getCollection('counselors');
+} catch (e) {
+  console.warn("目前无法获取咨询师列表");
+}
 // 定义基础导航项
 const navItems = [
   { text: "主页", href: "/" },
