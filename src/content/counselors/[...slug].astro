@@ -1,25 +1,64 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro'; // 根据你项目的实际 Layout 路径调整
+import Layout from '../../layouts/Layout.astro';
 
+// 1. 告诉 Astro 为每一个咨询师 MD 文件生成一个路径
 export async function getStaticPaths() {
-  const entries = await getCollection('counselors');
-  return entries.map(entry => ({
+  const counselorEntries = await getCollection('counselors');
+  return counselorEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
 
+// 2. 获取当前页面的数据
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.name}>
-  <section class="container mx-auto py-10">
-    <img src={entry.data.avatar} alt={entry.data.name} class="w-32 h-32 rounded-full" />
-    <h1 class="text-3xl font-bold">{entry.data.name}</h1>
-    <p class="text-gray-600">{entry.data.title}</p>
-    <hr class="my-6" />
-    <article class="prose lg:prose-xl">
-      <Content /> </article>
-  </section>
+<Layout title={`${entry.data.name} - 心理咨询师`}>
+  <main class="bg-[#F9F4EF] min-h-screen py-16 px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm overflow-hidden">
+      
+      <div class="md:flex items-center p-8 md:p-12 border-b border-gray-100">
+        <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-10">
+          <img 
+            src={entry.data.avatar} 
+            alt={entry.data.name} 
+            class="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover shadow-md border-4 border-white"
+          />
+        </div>
+        <div>
+          <h1 class="text-4xl font-bold text-[#5C5146] mb-2">{entry.data.name}</h1>
+          <p class="text-xl text-[#D4A373] font-medium mb-4">{entry.data.title}</p>
+          <p class="text-gray-600 leading-relaxed italic">"{entry.data.description}"</p>
+        </div>
+      </div>
+
+      <div class="p-8 md:p-12">
+        <div class="prose prose-stone max-w-none 
+          prose-h3:text-[#D4A373] prose-h3:border-l-4 prose-h3:border-[#D4A373] prose-h3:pl-4 prose-h3:mt-8
+          prose-li:text-gray-700">
+          <Content />
+        </div>
+        
+        <div class="mt-16 p-6 bg-[#FDFBF9] rounded-2xl border border-[#D4A373]/10 text-center">
+          <p class="text-[#5C5146] font-medium">
+            “愿主耶稣基督的恩惠、上帝的慈爱、圣灵的感动，常与你们众人同在。”
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mt-8 text-center">
+      <a href="/counseling" class="text-gray-500 hover:text-[#D4A373] transition-colors">
+        ← 返回辅导立场与伦理
+      </a>
+    </div>
+  </main>
 </Layout>
+
+<style is:global>
+  /* 确保 Markdown 里的列表样式漂亮 */
+  .prose ul { list-style-type: disc; }
+  .prose ol { list-style-type: decimal; }
+</style>
