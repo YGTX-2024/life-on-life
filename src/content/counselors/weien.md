@@ -1,7 +1,6 @@
 ---
 name: "微恩姐妹"
 title: "心理咨询师 | 职场与情感关系辅导"
-avatar: "/images/counselors/weien.jpg"
 order: 3
 description: "专注于女性一对一辅导、青少年成长及婚恋关系处理，致力于提供温暖的心理陪伴。"
 ---
