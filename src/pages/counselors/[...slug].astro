@@ -1,1 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/BaseLayout.astro';
 
+// 1. 为每个咨询师生成路径
+export async function getStaticPaths() {
+  const counselorEntries = await getCollection('counselors');
+  return counselorEntries.map(entry => ({
+    params: { slug: entry.slug }, 
+    props: { entry },
+  }));
+}
+
+// 2. 获取当前路径对应的咨询师数据
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.name}>
+  <article class="bg-white min-h-screen">
+    <header class="bg-[#F9F4EF] py-20 px-4 text-center">
+      <h1 class="text-4xl font-bold text-[#5C5146] mb-4">{entry.data.name}</h1>
+      <p class="text-[#D4A373] text-xl">{entry.data.title}</p>
+    </header>
+
+    <div class="max-w-3xl mx-auto py-16 px-6 prose prose-stone prose-lg">
+      <Content />
+    </div>
+
+    <div class="pb-20 text-center">
+      <a href="/counseling" class="text-gray-400 hover:text-[#D4A373] transition-colors">
+        ← 返回心理辅导列表
+      </a>
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  /* 简单的样式美化，确保 Markdown 的内容看起来很整齐 */
+  .prose h3 { color: #5C5146; margin-top: 2em; border-left: 4px solid #D4A373; padding-left: 1rem; }
+  .prose ul { list-style-type: disc; padding-left: 1.5rem; }
+  .prose li { margin-bottom: 0.5rem; }
+  .prose strong { color: #5C5146; }
+</style>
