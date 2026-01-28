@@ -23,26 +23,24 @@ const {
 ---
 
 <section
-  class="relative min-h-[70vh] flex items-center bg-cover pt-30"
-  style={`background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${backgroundImage}); background-position: center 20%;`}
+  class="relative min-h-[70vh] flex items-center bg-cover pt-20 lg:pt-30"
+  style={`background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${backgroundImage}); background-position: center 20%;`}
 >
-  <div class="max-w-7xl mx-auto w-full px-6 pl-12 lg:pl-40"> 
+  <div class="max-w-7xl mx-auto w-full px-8 lg:pl-48"> 
     <div class="max-w-3xl text-white">
-      <h1 class="text-4xl md:text-7xl font-bold mb-6 text-white tracking-tight">{title}</h1>
-      <p class="text-xl md:text-2xl mb-10 opacity-90">{subtitle}</p>
+      <h1 class="text-4xl md:text-7xl font-bold mb-6 text-white tracking-tight leading-tight">
+        {title}
+      </h1>
+      
+      <p class="text-lg md:text-2xl mb-10 opacity-90 leading-relaxed max-w-[260px] md:max-w-full">
+        {subtitle}
+      </p>
 
-      <div class="flex flex-wrap gap-5 mt-10">
-        <a 
-          href={ctaLink} 
-          class="bg-[#D4A373] hover:bg-[#C29262] text-white px-10 py-4 rounded-md font-bold transition-all shadow-xl no-underline text-lg"
-        >
+      <div class="flex flex-col sm:flex-row gap-4 mt-8">
+        <a href={ctaLink} class="text-center bg-[#D4A373] text-white px-8 py-4 rounded-md font-bold text-lg shadow-xl no-underline">
           {ctaText}
         </a>
-
-        <a 
-          href={secondaryCtaLink} 
-          class="bg-white/10 hover:bg-white/20 text-white border border-white px-10 py-4 rounded-md font-bold transition-all backdrop-blur-sm no-underline text-lg"
-        >
+        <a href={secondaryCtaLink} class="text-center bg-white/10 text-white border border-white px-8 py-4 rounded-md font-bold backdrop-blur-sm text-lg no-underline">
           {secondaryCtaText}
         </a>
       </div>
