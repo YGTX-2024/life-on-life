@@ -20,16 +20,15 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="hidden lg:block">
-  <ul class="flex items-center space-x-8"> {
+<nav id="nav-menu" class="hidden lg:block absolute lg:static top-24 left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-xl lg:shadow-none z-[100]">
+  <ul class="flex flex-col lg:flex-row items-start lg:items-center p-6 lg:p-0 space-y-4 lg:space-y-0 lg:space-x-8">
+    {
       navItems.map((item) => {
-        const isActive = currentPath === item.href || 
-                        (item.href !== "/" && currentPath.startsWith(item.href));
+        const isActive = currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href));
 
         return (
-          <li class="relative group">
+          <li class="relative group w-full lg:w-auto">
             {item.hasDropdown ? (
-              /* 1. 心理辅导按钮：同步调大至 text-xl */
               <button class={`flex items-center gap-1.5 py-2 text-xl font-bold transition-colors ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}>
                 {item.text}
                 <svg class="w-5 h-5 opacity-50 group-hover:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor">
@@ -37,25 +36,17 @@ const currentPath = Astro.url.pathname;
                 </svg>
               </button>
             ) : (
-              /* 2. 普通菜单项：保持 text-xl */
-              <a 
-                href={item.href}
-                class={`block py-2 text-xl font-bold transition-colors whitespace-nowrap ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}
-              >
+              <a href={item.href} class={`block py-2 text-xl font-bold transition-colors whitespace-nowrap ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}>
                 {item.text}
               </a>
             )}
 
-            {/* 下拉菜单逻辑保持不变 */}
             {item.hasDropdown && (
-              <div class="absolute left-0 w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div class="bg-white border border-gray-100 rounded-lg shadow-xl py-2">
-                  <a href="/counseling" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#D4A373]">辅导介绍</a>
-                  <div class="h-px mx-2 my-1 bg-gray-100" />
-                  {counselors.sort((a, b) => (a.data.order || 99) - (b.data.order || 99)).map((counselor) => (
-                    <a href={`/counselors/${counselor.slug}`} class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#D4A373]">
-                      {counselor.data.name}
-                    </a>
+              <div class="lg:absolute left-0 w-full lg:w-48 pt-2 lg:opacity-0 lg:invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div class="bg-gray-50 lg:bg-white border border-gray-100 rounded-lg shadow-inner lg:shadow-xl py-2">
+                  <a href="/counseling" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:text-[#D4A373]">辅导介绍</a>
+                  {counselors.map((c) => (
+                    <a href={`/counselors/${c.slug}`} class="block px-4 py-2 text-sm text-gray-600 hover:text-[#D4A373]">{c.data.name}</a>
                   ))}
                 </div>
               </div>
