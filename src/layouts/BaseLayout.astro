@@ -1,10 +1,5 @@
 ---
-// 1. 确保导入了必要的组件
-import Header from '../components/Header.astro'; 
-// 如果上面不行，尝试下面这种更稳妥的写法（指向绝对路径）：
-import Header from '@/components/Header.astro';
-// 或者最直接的相对路径：
-import Header from '../components/Header.astro';
+// 顶部暂不引用任何组件，确保构建成功
 ---
 
 <!DOCTYPE html>
@@ -12,10 +7,22 @@ import Header from '../components/Header.astro';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>生命互助 - 以福音为中心的全人更新</title>
-  </head>
+    <title>生命互助</title>
+    </head>
   <body class="bg-[#FDFCFB] min-h-screen flex flex-col">
-    <Header />
+    
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-[#5C5146] font-serif">生命互助</a>
+        
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+          <a href="/about" class="hover:text-[#D4A373] transition-colors">关于我们</a>
+          <a href="/confession" class="hover:text-[#D4A373] transition-colors">信仰告白</a>
+          <a href="/counselors" class="hover:text-[#D4A373] transition-colors">咨询师团队</a>
+          <a href="/renewal" class="hover:text-[#D4A373] transition-colors">全人更新</a>
+        </div>
+      </div>
+    </nav>
 
     <main class="flex-grow">
       <slot />
@@ -23,16 +30,14 @@ import Header from '../components/Header.astro';
 
     <footer class="bg-[#0F172A] text-gray-400 py-12 mt-20">
       <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div class="space-y-4">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl font-bold text-white font-serif">生命互助</span>
-          </div>
+        <div class="space-y-4 text-center md:text-left">
+          <span class="text-2xl font-bold text-white font-serif">生命互助</span>
           <p class="text-sm">致力于以福音为中心的全人更新，陪伴生命共同成长。</p>
         </div>
 
         <div>
           <h3 class="text-white font-bold mb-4">关于我们</h3>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2 text-sm text-center md:text-left">
             <li><a href="/about" class="hover:text-white transition-colors">关于生命互助</a></li>
             <li><a href="/confession" class="hover:text-white transition-colors">信仰告白</a></li>
             <li><a href="/counselors" class="hover:text-white transition-colors">咨询师团队</a></li>
@@ -41,7 +46,7 @@ import Header from '../components/Header.astro';
 
         <div>
           <h3 class="text-white font-bold mb-4">信仰资源</h3>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2 text-sm text-center md:text-left">
             <li><a href="/blog" class="hover:text-white transition-colors">文章分享</a></li>
             <li><a href="/renewal" class="hover:text-white transition-colors">全人更新模型</a></li>
           </ul>
@@ -49,13 +54,12 @@ import Header from '../components/Header.astro';
 
         <div>
           <h3 class="text-white font-bold mb-4">联系我们</h3>
-          <ul class="space-y-2 text-sm text-gray-400">
+          <ul class="space-y-2 text-sm text-gray-400 text-center md:text-left">
             <li>邮箱: YGTX2024@outlook.com</li>
             <li>微信: Janewang1976 (预约)</li>
           </ul>
         </div>
       </div>
-
       <div class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-xs">
         <p>© 2026 生命互助. All rights reserved.</p>
       </div>
