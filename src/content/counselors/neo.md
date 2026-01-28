@@ -19,7 +19,6 @@ description: "专注于全人成长规划、情绪疏导及属灵低谷陪伴。
 ### 咨询与收费
 * **咨询方式**：线上 / 线下新加坡，2026年7月之前，个体咨询名额已约满。
 * **收费标准**：区间收费（1-300 人民币/ 小时）。来访者可根据自身经济能力与感动，与咨询师协商最终标准。
-### 联系方式
 
 ### 联系方式
 
@@ -36,11 +35,11 @@ description: "专注于全人成长规划、情绪疏导及属灵低谷陪伴。
     <td style="width: 45%; vertical-align: top; border: none;">
       <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: flex-start;">
         <div style="text-align: center; width: 115px;">
-          <img src="/uploads/xiaogezi-qr.png" alt="小鸽子二维码" style="width: 100%; display: block; border: 1px solid #f0f0f0; border-radius: 6px;" />
+          <img src="/uploads/xiaogezi-qr.png?v=1" alt="小鸽子二维码" style="width: 100%; display: block; border: 1px solid #f0f0f0; border-radius: 6px;" />
           <span style="font-size: 11px; color: #999; display: block; margin-top: 6px;">小鸽子扫码</span>
         </div>
         <div style="text-align: center; width: 115px;">
-          <img src="/uploads/mosi-qr.png" alt="摩斯二维码" style="width: 100%; display: block; border: 1px solid #f0f0f0; border-radius: 6px;" />
+          <img src="/uploads/mosi-qr.png?v=1" alt="摩斯二维码" style="width: 100%; display: block; border: 1px solid #f0f0f0; border-radius: 6px;" />
           <span style="font-size: 11px; color: #999; display: block; margin-top: 6px;">摩斯扫码</span>
         </div>
       </div>
