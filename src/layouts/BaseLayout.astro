@@ -1,63 +1,41 @@
----
-import "../assets/styles/global.css";
-import Seo from "../components/UI/Seo.astro";
-import Header from "../components/Global/Header.astro";
-import Footer from "../components/Global/Footer.astro";
-
-export interface Props {
-  title?: string;
-  description?: string;
-  image?: {
-    url: string;
-    alt: string;
-  };
-  type?: "website" | "article";
-  canonicalUrl?: string;
-}
-
-const {
-  title = "Church Name - A Welcoming Christian Community",
-  description = "We are a welcoming Christian community dedicated to sharing God's love through worship, fellowship, and service.",
-  image = {
-    url: "/uploads/church-default.webp",
-    alt: "Church Name",
-  },
-  type = "website",
-  canonicalUrl,
-} = Astro.props;
----
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    
-    <Seo
-      title={title}
-      description={description}
-      image={image}
-      type={type}
-      canonicalUrl={canonicalUrl}
-    />
-    
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-  </head>
-  <body>
-    <div class="flex flex-col min-h-screen">
-      <Header />
-      
-      <main class="flex-grow">
-        <slot />
-      </main>
-      
-      <Footer />
+<footer class="bg-[#0F172A] text-gray-400 py-12 mt-20">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-bold text-white font-serif">生命互助</span>
+      </div>
+      <p class="text-sm">致力于以福音为中心的全人更新，陪伴生命共同成长。</p>
+      <div class="flex gap-4">
+         </div>
     </div>
-  </body>
-</html>
+
+    <div>
+      <h3 class="text-white font-bold mb-4">关于我们</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/about" class="hover:text-white transition-colors">关于生命互助</a></li>
+        <li><a href="/confession" class="hover:text-white transition-colors">信仰告白</a></li>
+        <li><a href="/counselors" class="hover:text-white transition-colors">咨询师团队</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4">信仰资源</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/blog" class="hover:text-white transition-colors">文章分享</a></li>
+        <li><a href="/renewal" class="hover:text-white transition-colors">全人更新模型</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-bold mb-4">联系我们</h3>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li>邮箱: YGTX2024@outlook.com</li>
+        <li>微信: Janewang1976 (预约)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+    <p>© 2026 生命互助. All rights reserved.</p>
+  </div>
+</footer>
