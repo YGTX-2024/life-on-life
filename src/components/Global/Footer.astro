@@ -1,4 +1,6 @@
 ---
+const currentYear = new Date().getFullYear();
+
 const footerLinks = [
   { text: "信仰告白", href: "/confession" },
   { text: "心理辅导", href: "/counseling" },
@@ -8,34 +10,47 @@ const footerLinks = [
 ];
 ---
 
-<footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+<footer class="bg-white border-t border-gray-100 pt-16 pb-12">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-      <div class="flex flex-col">
-        <div class="flex items-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-8 w-auto text-[#D4A373] mr-3"><path fill="currentColor" d="M344 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v46.4L183.3 210c-14.5 8.7-23.3 24.3-23.3 41.2V464c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V251.2c0-16.9-8.8-32.5-23.3-41.2L344 70.4V24zM256 464V336h128v128H256z"/></svg>
-          <span class="text-2xl font-bold text-[#5C5146] font-serif">与光同行</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      
+      <div class="space-y-4">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-8 w-auto text-[#D4A373] mr-3">
+            <path fill="currentColor" d="M344 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v46.4L183.3 210c-14.5 8.7-23.3 24.3-23.3 41.2V464c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V251.2c0-16.9-8.8-32.5-23.3-41.2L344 70.4V24zM256 464V336h128v128H256z"/>
+          </svg>
+          <span class="text-2xl font-bold text-[#5C5146] font-serif tracking-tight">与光同行</span>
         </div>
-        <p class="text-gray-500 leading-relaxed">致力于以福音为中心的全人更新，陪伴生命共同成长。</p>
+        <p class="text-gray-500 text-sm leading-relaxed tracking-wide">
+          致力于以福音为中心的全人更新，陪伴生命共同成长。
+        </p>
       </div>
-      <div>
-        <h4 class="text-[#5C5146] font-bold mb-6 text-lg">快速链接</h4>
-        <ul class="space-y-4 list-none p-0">
+
+      <div class="lg:pl-8">
+        <h4 class="text-[#5C5146] font-bold mb-6 text-base tracking-widest uppercase">快速链接</h4>
+        <ul class="space-y-3 p-0 list-none">
           {footerLinks.map(link => (
-            <li><a href={link.href} class="text-gray-500 hover:text-[#D4A373] no-underline transition-colors">{link.text}</a></li>
+            <li>
+              <a href={link.href} class="text-gray-500 hover:text-[#D4A373] transition-colors no-underline text-sm font-medium">
+                {link.text}
+              </a>
+            </li>
           ))}
         </ul>
       </div>
+
       <div>
-        <h4 class="text-[#5C5146] font-bold mb-6 text-lg">联系我们</h4>
-        <div class="space-y-4 text-gray-500">
-          <p>邮箱: <a href="mailto:YGTX2024@outlook.com" class="text-gray-500 no-underline hover:text-[#D4A373]">YGTX2024@outlook.com</a></p>
-          <p>微信: Janewang1976 (预约)</p>
-        </div>
+        <h4 class="text-[#5C5146] font-bold mb-6 text-base tracking-widest uppercase">服务宗旨</h4>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          通过专业的心理辅导与信仰资源，协助每一位寻求者在基督里得着真实的平安与更新。
+        </p>
       </div>
-    </div>
-    <div class="pt-8 border-t border-gray-50 text-center text-sm text-gray-400">
-      &copy; 2026 与光同行. All rights reserved.
-    </div>
-  </div>
-</footer>
+
+      <div>
+        <h4 class="text-[#5C5146] font-bold mb-6 text-base tracking-widest uppercase">联系我们</h4>
+        <div class="space-y-4 text-sm">
+          <div class="flex flex-col space-y-1">
+            <span class="text-[#D4A373] font-bold">工作邮箱</span>
+            <a href="mailto:YGTX2024@outlook.com" class="text-gray-500 hover:text-[#D4A373] no-underline transition-colors">YGTX2024@outlook.com</a>
+          </div>
+          <div class="flex flex
