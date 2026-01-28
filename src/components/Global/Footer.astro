@@ -1,20 +1,26 @@
 ---
 const currentYear = new Date().getFullYear();
 
-const footerLinks = [
+// 定义左侧链接列
+const linksLeft = [
   { text: "信仰告白", href: "/confession" },
   { text: "心理辅导", href: "/counseling" },
   { text: "全人更新", href: "/renewal" },
+];
+
+// 定义右侧链接列
+const linksRight = [
   { text: "资源分享", href: "/blog" },
   { text: "奉献支持", href: "/giving" },
+  { text: "加入我们", href: "/join" }, // 新增项
 ];
 ---
 
 <footer class="bg-white border-t border-gray-100 pt-16 pb-12">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
       
-      <div class="space-y-5">
+      <div class="flex flex-col space-y-5">
         <div class="flex items-center">
           <img 
             src="/uploads/logo-new.png" 
@@ -23,17 +29,25 @@ const footerLinks = [
           />
           <span class="text-2xl font-bold text-[#5C5146] font-serif tracking-tight">与光同行</span>
         </div>
-        <p class="text-gray-500 text-sm leading-relaxed tracking-wide">
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
           致力于以福音为中心的全人更新，陪伴生命共同成长。
         </p>
       </div>
 
-      <div class="lg:pl-8">
-        <h4 class="text-[#5C5146] font-bold mb-6 text-base tracking-widest uppercase">快速链接</h4>
-        <ul class="space-y-3 p-0 list-none">
-          {footerLinks.map(link => (
+      <div class="grid grid-cols-2 gap-4 lg:pt-2">
+        <ul class="space-y-4 p-0 list-none">
+          {linksLeft.map(link => (
             <li>
-              <a href={link.href} class="text-gray-500 hover:text-[#D4A373] transition-colors no-underline text-sm font-medium">
+              <a href={link.href} class="text-gray-600 hover:text-[#D4A373] transition-colors no-underline text-base font-medium">
+                {link.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ul class="space-y-4 p-0 list-none">
+          {linksRight.map(link => (
+            <li>
+              <a href={link.href} class="text-gray-600 hover:text-[#D4A373] transition-colors no-underline text-base font-medium">
                 {link.text}
               </a>
             </li>
@@ -41,23 +55,18 @@ const footerLinks = [
         </ul>
       </div>
 
-      <div>
-        <h4 class="text-[#5C5146] font-bold mb-6 text-base tracking-widest uppercase">服务宗旨</h4>
-        <p class="text-gray-500 text-sm leading-relaxed italic">
-          “通过专业的心理辅导与信仰资源，协助每一位寻求者在基督里得着真实的平安与更新。”
-        </p>
-      </div>
-
-      <div>
+      <div class="flex flex-col">
         <h4 class="text-[#5C5146] font-bold mb-6 text-base tracking-widest uppercase">联系我们</h4>
-        <div class="space-y-4 text-sm">
-          <div class="flex flex-col space-y-1">
-            <span class="text-[#D4A373] font-bold">工作邮箱</span>
+        <div class="space-y-3 text-sm text-gray-500">
+          <p class="flex items-center gap-2">
+            <span class="font-bold text-[#D4A373]">小鸽子号:</span> 8086245 (idigest)
+          </p>
+          <p class="flex items-center gap-2">
+            <span class="font-bold text-[#D4A373]">Signal:</span> +1 2344329189
+          </p>
+          <div class="pt-1 flex flex-col space-y-1">
             <a href="mailto:YGTX2024@outlook.com" class="text-gray-500 hover:text-[#D4A373] no-underline transition-colors">YGTX2024@outlook.com</a>
-          </div>
-          <div class="flex flex-col space-y-1">
-            <span class="text-[#D4A373] font-bold">微信预约</span>
-            <span class="text-gray-500 font-medium">Janewang1976</span>
+            <a href="mailto:ygtx2024@gmail.com" class="text-gray-500 hover:text-[#D4A373] no-underline transition-colors">ygtx2024@gmail.com</a>
           </div>
         </div>
       </div>
@@ -66,3 +75,11 @@ const footerLinks = [
 
     <div class="pt-8 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-xs text-gray-400 tracking-widest">
+        &copy; {currentYear} 与光同行 WALKING WITH LIGHT. All rights reserved.
+      </p>
+      <div class="flex gap-6">
+        <span class="text-[10px] text-gray-300 uppercase tracking-[0.2em] font-medium">Faith · Hope · Love</span>
+      </div>
+    </div>
+  </div>
+</footer>
