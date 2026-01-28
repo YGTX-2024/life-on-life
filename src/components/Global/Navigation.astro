@@ -21,8 +21,11 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="hidden lg:block">
-  <ul class="flex items-center space-x-6">
+<nav class="hidden lg:block max-w-6xl mx-auto px-4 w-full">
+  <ul class="flex items-center justify-end space-x-6">
+    {
+      navItems.map((item) => {
+        // ... 原有的 map 逻辑保持不变
     {
       navItems.map((item) => {
         const isActive = currentPath === item.href || 
