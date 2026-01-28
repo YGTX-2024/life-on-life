@@ -21,8 +21,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <nav class="hidden lg:block">
-  <ul class="flex items-center space-x-6">
-    {
+  <ul class="flex items-center space-x-8"> {
       navItems.map((item) => {
         const isActive = currentPath === item.href || 
                         (item.href !== "/" && currentPath.startsWith(item.href));
@@ -30,29 +29,31 @@ const currentPath = Astro.url.pathname;
         return (
           <li class="relative group">
             {item.hasDropdown ? (
-              <button class={`flex items-center gap-1 py-2 text-[16px] font-bold transition-colors ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}>
+              /* 1. 心理辅导按钮：同步调大至 text-xl */
+              <button class={`flex items-center gap-1.5 py-2 text-xl font-bold transition-colors ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}>
                 {item.text}
-                <svg class="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <svg class="w-5 h-5 opacity-50 group-hover:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                 </svg>
               </button>
             ) : (
+              /* 2. 普通菜单项：保持 text-xl */
               <a 
                 href={item.href}
-                class={`block py-2 text-xl font-bold transition-colors whitespace-nowrap ...`}
+                class={`block py-2 text-xl font-bold transition-colors whitespace-nowrap ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}
               >
                 {item.text}
               </a>
             )}
 
-            {/* 下拉菜单 */}
+            {/* 下拉菜单逻辑保持不变 */}
             {item.hasDropdown && (
               <div class="absolute left-0 w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div class="bg-white border border-gray-100 rounded-lg shadow-xl py-2">
-                  <a href="/counseling" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">辅导介绍</a>
+                  <a href="/counseling" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#D4A373]">辅导介绍</a>
                   <div class="h-px mx-2 my-1 bg-gray-100" />
                   {counselors.sort((a, b) => (a.data.order || 99) - (b.data.order || 99)).map((counselor) => (
-                    <a href={`/counselors/${counselor.slug}`} class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50">
+                    <a href={`/counselors/${counselor.slug}`} class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#D4A373]">
                       {counselor.data.name}
                     </a>
                   ))}
