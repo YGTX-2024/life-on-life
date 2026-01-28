@@ -2,20 +2,16 @@
 import Navigation from "./Navigation.astro";
 ---
 
-<header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-    
-    <a href="/" class="text-2xl font-bold text-primary-800 font-serif flex items-center shrink-0">
-      <span class="sr-only">与光同行</span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-10 w-auto text-[#D4A373] mr-2">
-        <path fill="currentColor" d="M344 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V10 24 32 0c-13.3 0-24 10.7-24 24 24s10.7 24 24 24h32 0 0 46.4L183.3 210c-14.5 8.7-23.3 24.3-23.3 41.2V464c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V251.2c0-16.9-8.8-32.5-23.3-41.2L344 70.4V24zM256 464V336h128v128H256z"/>
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-24"> <a href="/" class="flex items-center shrink-0 group">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-12 w-auto text-[#D4A373] transition-transform group-hover:scale-110">
+        <path fill="currentColor" d="M344 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v46.4L183.3 210c-14.5 8.7-23.3 24.3-23.3 41.2V464c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V251.2c0-16.9-8.8-32.5-23.3-41.2L344 70.4V24zM256 464V336h128v128H256z"/>
       </svg>
-      <span class="text-2xl font-bold text-[#5C5146] tracking-[0.1em] ml-1">与光同行</span>
+      <span class="text-3xl font-bold text-[#5C5146] tracking-[0.15em] ml-3 font-serif">与光同行</span>
     </a>
 
     <div class="flex items-center">
       <Navigation />
     </div>
-
   </div>
 </header>
