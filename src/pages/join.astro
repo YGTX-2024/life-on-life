@@ -6,12 +6,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="bg-[#FDFCFB] py-20 px-6">
     <div class="max-w-3xl mx-auto bg-white p-8 md:p-16 shadow-sm border border-gray-100 rounded-lg">
       
-      <h1 class="text-3xl md:text-4xl font-bold text-[#5C5146] mb-2 font-serif">与光同行 · 同工入驻说明</h1>
-      <p class="text-sm text-[#D4A373] mb-10 tracking-widest">（2026年1月修订）</p>
+      <header class="mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-[#5C5146] mb-2 font-serif">与光同行 · 同工入驻说明</h1>
+        <p class="text-sm text-[#D4A373] tracking-widest uppercase">（2026年1月修订）</p>
+      </header>
 
-      <div class="prose prose-brown max-w-none text-gray-700 leading-relaxed space-y-8">
+      <div class="prose prose-brown max-w-none text-gray-700 leading-relaxed space-y-10">
         
-        <p class="italic text-lg text-gray-600">
+        <p class="italic text-lg text-gray-600 border-b pb-6">
           亲爱的家人，感谢您愿意入驻与光同行，盼望主通过您的服侍帮助您成长，也祝福更多朋友。我们对同工的要求如下：
         </p>
 
@@ -32,43 +34,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
 
         <section>
-          <h2 class="text-xl font-bold text-[#5C5146] border-l-4 border-[#D4A373] pl-4 mb-4">3. 理念与 4. 安全意识</h2>
-          <p class="mb-4">认同与光同行的信仰告白、异象和服侍理念。为了自我保护及保护他人：</p>
-          <ul class="list-none pl-0 space-y-2 bg-gray-50 p-6 rounded-md text-sm">
-            <li>• 我们要求平台同工统一匿名，使用昵称。</li>
-            <li>• 不建议同工使用微信、QQ等没有隐私保护的软件。</li>
-            <li>• 建议同工使用小鸽子，摩斯，Signal 等工具。</li>
-            <li>• 门训、团体成长等小组，禁止使用微信和 QQ。</li>
-            <li>• 一对一辅导特殊情况下允许使用微信、QQ，需要同工声明：自己承担安全风险。</li>
-          </ul>
+          <h2 class="text-xl font-bold text-[#5C5146] border-l-4 border-[#D4A373] pl-4 mb-4">3. 理念</h2>
+          <p>认同与光同行的信仰告白、异象和服侍理念。</p>
         </section>
 
         <section>
-          <h2 class="text-xl font-bold text-[#5C5146] border-l-4 border-[#D4A373] pl-4 mb-4">5. 收费</h2>
-          <ul class="list-none pl-0 space-y-2">
-            <li>1) 咨询师自己定价，平台的原则是恩典与工价并存。</li>
-            <li>2) 但夸张的市场价（如每场咨询 1000 元以上），平台不会接纳。</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 class="text-xl font-bold text-[#5C5146] border-l-4 border-[#D4A373] pl-4 mb-4">6. 成长</h2>
-          <div class="space-y-4">
-            <p>作为平台的发起人，我的负担是尽量提醒同工：我们服侍是因为福音，且离不开圣灵的能力。同工需参与：</p>
-            <ul class="list-none pl-0 space-y-2 border-b pb-4">
-              <li class="flex items-start gap-2"><span class="text-[#D4A373]">✔</span> 每年至少完成一次 21 天以福音为动力的默想。</li>
-              <li class="flex items-start gap-2"><span class="text-[#D4A373]">✔</span> 每年至少完成一次 21 天被圣灵充满的操练。</li>
-            </ul>
-            <p class="text-sm text-gray-500 italic">至于您每年的圣经知识、神学装备、心理学装备等，我相信圣灵会自由带领各位。</p>
-          </div>
-        </section>
-
-        <div class="mt-16 pt-8 border-t border-gray-100 text-center">
-          <p class="text-lg font-medium text-[#5C5146] mb-4">如果您对平台感兴趣，欢迎联系 Neo 小盐弟兄</p>
-          <p class="text-[#D4A373] font-bold tracking-widest">愿主的旨意成就</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</BaseLayout>
+          <h2 class="text-xl font-bold text-[#5C5146] border-l-4 border-[#D4A373] pl-4 mb-4">4. 安全意识</h2>
+          <p class="mb-4 text-sm font-medium text-gray-500 underline decoration-[#D4A373]/30">为了自我保护及保护他人：</p>
+          <ul class="list-none pl-0 space-y-3 bg-gray-50 p-6 rounded-md">
+            <li class="flex items-start gap-2"><span>1)</span> <span>我们要求平台同工统一匿名，使用昵称。</span></li>
+            <li class="flex items-start gap-2"><span>2)</span> <span>不建议同工使用微信、QQ 等没有隐私保护的软件。</span></li>
+            <li class="flex items-start gap-2"><span>3)</span> <span>建议同工使用小鸽子、摩斯、Signal 等工具。</span></li>
+            <li class="flex items-start gap-2"><span>4)</span> <span>门训、团体成长等小组，<strong class="text-red-800/70">禁止使用微信和 QQ</strong>。</span></li>
+            <li class="flex items-start gap-2"><span>5)</span> <span>一对一辅导特殊情况下允许使用微信、QQ，需要
