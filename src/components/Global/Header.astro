@@ -3,12 +3,15 @@ import Navigation from "./Navigation.astro";
 ---
 
 <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 lg:px-12 flex items-center justify-between h-24 lg:h-28">
+  <div class="max-w-7xl mx-auto px-4 lg:px-12 flex items-center justify-between h-24 lg:h-32">
     
     <a href="/" class="flex items-center shrink-0 group no-underline">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-10 lg:h-14 w-auto text-[#D4A373] mr-3">
-        <path fill="currentColor" d="M344 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v46.4L183.3 210c-14.5 8.7-23.3 24.3-23.3 41.2V464c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V251.2c0-16.9-8.8-32.5-23.3-41.2L344 70.4V24zM256 464V336h128v128H256z"/>
-      </svg>
+      <img 
+        src="/uploads/logo-new.png" 
+        alt="与光同行 Logo" 
+        class="h-14 lg:h-20 w-auto mr-3 transition-transform group-hover:scale-105"
+      />
+      
       <div class="flex flex-col">
         <span class="text-2xl lg:text-4xl font-bold text-[#5C5146] tracking-[0.1em] lg:tracking-[0.2em] font-serif uppercase">与光同行</span>
         <span class="text-[8px] lg:text-[10px] text-[#D4A373] tracking-[0.3em] lg:tracking-[0.5em] mt-0.5 font-sans opacity-80">WALKING WITH LIGHT</span>
@@ -30,6 +33,7 @@ import Navigation from "./Navigation.astro";
 
 <script>
   // 手机菜单点击显示/隐藏逻辑
+  // 请确保 Navigation.astro 中的 nav 标签 id 是 nav-menu
   const btn = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav-menu');
   btn?.addEventListener('click', () => {
