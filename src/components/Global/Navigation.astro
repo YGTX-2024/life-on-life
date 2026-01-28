@@ -1,15 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 
-// 获取所有咨询师资料
 let counselors = [];
 try {
   counselors = await getCollection('counselors');
 } catch (e) {
-  console.warn("目前无法获取咨询师列表");
+  console.warn("无法获取咨询师列表");
 }
 
-// 定义基础导航项
 const navItems = [
   { text: "主页", href: "/" },
   { text: "信仰告白", href: "/confession" },
@@ -22,8 +20,9 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="hidden lg:block">
-  <ul class="flex items-center space-x-6"> {
+<nav class="hidden lg:flex justify-end flex-1">
+  <ul class="flex items-center space-x-7">
+    {
       navItems.map((item) => {
         const isActive = currentPath === item.href || 
                         (item.href !== "/" && currentPath.startsWith(item.href));
@@ -31,21 +30,21 @@ const currentPath = Astro.url.pathname;
         if (item.hasDropdown) {
           return (
             <li class="relative group">
-              <button class={`flex items-center gap-1 py-2 text-sm font-medium transition-colors ${isActive ? 'text-[#D4A373]' : 'text-gray-600 hover:text-[#D4A373]'}`}>
+              <button class={`flex items-center gap-1 py-2 text-[15px] font-medium transition-colors ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}>
                 {item.text}
-                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180 opacity-70" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                 </svg>
               </button>
               
-              <div class="absolute left-0 w-48 mt-0 origin-top-left bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="absolute right-0 w-48 mt-0 origin-top-right bg-white border border-gray-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div class="py-2">
-                  <a href="/counseling" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#D4A373]">
+                  <a href="/counseling" class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FDFCFB] hover:text-[#D4A373]">
                     辅导介绍
                   </a>
-                  <div class="h-px mx-2 my-1 bg-gray-100" />
+                  <div class="h-px mx-2 my-1 bg-gray-50" />
                   {counselors.sort((a, b) => (a.data.order || 99) - (b.data.order || 99)).map((counselor) => (
-                    <a href={`/counselors/${counselor.slug}`} class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#D4A373]">
+                    <a href={`/counselors/${counselor.slug}`} class="block px-4 py-2 text-sm text-gray-600 hover:bg-[#FDFCFB] hover:text-[#D4A373]">
                       {counselor.data.name}
                     </a>
                   ))}
@@ -59,7 +58,7 @@ const currentPath = Astro.url.pathname;
           <li>
             <a 
               href={item.href}
-              class={`block py-2 text-sm font-medium transition-colors whitespace-nowrap ${isActive ? 'text-[#D4A373]' : 'text-gray-600 hover:text-[#D4A373]'}`}
+              class={`block py-2 text-[15px] font-medium transition-colors whitespace-nowrap ${isActive ? 'text-[#D4A373]' : 'text-[#5C5146] hover:text-[#D4A373]'}`}
             >
               {item.text}
             </a>
