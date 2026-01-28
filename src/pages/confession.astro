@@ -39,7 +39,23 @@ import Layout from '../layouts/BaseLayout.astro';
               </div>
             ))}
           </div>
-
+<div class="mt-20">
+        <h2 class="text-3xl font-bold text-[#5C5146] mb-10 pb-4 border-b border-[#D4A373]/20">同工服侍告白</h2>
+        <div class="grid gap-6">
+          {[
+            "我们的团队领袖是三位一体的上帝。",
+            "我们愿意效法耶稣，做好仆人、好牧人、好管家（Servant-Shepherd-Steward Leadership）。",
+            "我们首要关注的是我们与神的关系，其次是我们的各自的家庭，然后是服侍。",
+            "我们相信圣灵、圣经、肢体关系和祷告是基督徒独有的具有强大威力的心意更新途径。",
+            "我们愿意为回应神的救赎的缘故，不断地提升自己的服侍技能。"
+          ].map((item, idx) => (
+            <div class="flex items-start gap-4 group">
+              <span class="text-[#D4A373] font-serif italic text-xl opacity-50">{(idx + 1).toString().padStart(2, '0')}</span>
+              <p class="text-lg text-[#5C5146] leading-relaxed group-hover:text-black transition-colors">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
           <footer class="mt-20 pt-10 border-t border-gray-100 space-y-4 text-sm text-gray-500">
             <p><strong>注1：</strong> 此处被圣灵充满是指传统意义上的意思，指被圣灵掌管，对应我们的一面就是，愿意顺服圣灵的掌管与引导。</p>
             <p><strong>注2：</strong> 我们不否认说方言、医病赶鬼的圣灵恩赐，但是我们认为这类恩赐需要辨别，需要按照圣经的原则使用，不能高过与上帝的关系。</p>
