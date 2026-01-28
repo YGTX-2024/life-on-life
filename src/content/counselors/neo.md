@@ -17,14 +17,34 @@ description: "专注于全人成长规划、情绪疏导及属灵低谷陪伴。
 4. **创伤辅导**：处理来自原生家庭或教会环境的心理创伤。
 
 ### 咨询与收费
-* **咨询方式**：线上 / 线下（新加坡地区）
+* **咨询方式**：线上 / 线下新加坡，2026年7月之前，个体咨询名额已约满。
 * **收费标准**：区间收费（1-200 人民币/ 小时）。来访者可根据自身经济能力与感动，与咨询师协商最终标准。
-
 ### 联系方式
-* **小鸽子号 (idigest)**: 8086245
-* **Signal**: +1 2344329189
-* **摩斯 (Mosavi) 公钥**: npub1pyw4xevgetmdr66ssnyvea5glfq67qpzujxm8n5fd0273aq9mk2q6tnyfe
-* **邮箱**: YGTX2024@outlook.com / ygtx2024@gmail.com
+
+<table style="width: 100%; border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td style="width: 60%; vertical-align: top; border: none; padding-right: 20px;">
+      <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+        <li><strong>小鸽子号 (idigest)</strong>: 8086245</li>
+        <li><strong>Signal</strong>: +1 2344329189</li>
+        <li><strong>摩斯 (Mosavi) 公钥</strong>: <br/> <small style="word-break: break-all; color: #666;">npub1pyw4xevgetmdr66ssnyvea5glfq67qpzujxm8n5fd0273aq9mk2q6tnyfe</small></li>
+        <li><strong>邮箱</strong>: YGTX2024@outlook.com <br/> ygtx2024@gmail.com</li>
+      </ul>
+    </td>
+    <td style="width: 40%; vertical-align: top; border: none;">
+      <div style="display: flex; gap: 15px; justify-content: flex-end;">
+        <div style="text-align: center;">
+          <img src="/uploads/xiaogezi-qr.png" alt="小鸽子二维码" style="width: 110px; border: 1px solid #eee; border-radius: 8px;" />
+          <p style="font-size: 12px; color: #999; margin-top: 5px;">小鸽子扫码</p>
+        </div>
+        <div style="text-align: center;">
+          <img src="/uploads/mosi-qr.png" alt="摩斯二维码" style="width: 110px; border: 1px solid #eee; border-radius: 8px;" />
+          <p style="font-size: 12px; color: #999; margin-top: 5px;">摩斯扫码</p>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
 
 ---
 
