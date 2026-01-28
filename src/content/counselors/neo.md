@@ -21,33 +21,33 @@ description: "专注于全人成长规划、情绪疏导及属灵低谷陪伴。
 * **收费标准**：区间收费（1-300 人民币/ 小时）。来访者可根据自身经济能力与感动，与咨询师协商最终标准。
 ### 联系方式
 
-<table style="width: 100%; border-collapse: collapse; border: none;">
+### 联系方式
+
+<table style="width: 100%; border-collapse: collapse; border: none; margin-top: 20px;">
   <tr style="border: none;">
-    <td style="width: 60%; vertical-align: top; border: none; padding-right: 20px;">
-      <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+    <td style="width: 55%; vertical-align: top; border: none; padding-right: 15px;">
+      <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
         <li><strong>小鸽子号 (idigest)</strong>: 8086245</li>
         <li><strong>Signal</strong>: +1 2344329189</li>
-        <li><strong>摩斯 (Mosavi) 公钥</strong>: <br/> <small style="word-break: break-all; color: #666;">npub1pyw4xevgetmdr66ssnyvea5glfq67qpzujxm8n5fd0273aq9mk2q6tnyfe</small></li>
+        <li><strong>摩斯 (Mosavi) 公钥</strong>: <br/> <small style="word-break: break-all; color: #777;">npub1pyw4xevgetmdr66ssnyvea5glfq67qpzujxm8n5fd0273aq9mk2q6tnyfe</small></li>
         <li><strong>邮箱</strong>: YGTX2024@outlook.com <br/> ygtx2024@gmail.com</li>
       </ul>
     </td>
-    <td style="width: 40%; vertical-align: top; border: none;">
-      <div style="display: flex; gap: 15px; justify-content: flex-end;">
-        <div style="text-align: center;">
-          <img src="/uploads/xiaogezi-qr.png" alt="小鸽子二维码" style="width: 110px; border: 1px solid #eee; border-radius: 8px;" />
-          <p style="font-size: 12px; color: #999; margin-top: 5px;">小鸽子扫码</p>
+    <td style="width: 45%; vertical-align: top; border: none;">
+      <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: flex-start;">
+        <div style="text-align: center; width: 115px;">
+          <img src="/uploads/xiaogezi-qr.png" alt="小鸽子二维码" style="width: 100%; display: block; border: 1px solid #f0f0f0; border-radius: 6px;" />
+          <span style="font-size: 11px; color: #999; display: block; margin-top: 6px;">小鸽子扫码</span>
         </div>
-        <div style="text-align: center;">
-          <img src="/uploads/mosi-qr.png" alt="摩斯二维码" style="width: 110px; border: 1px solid #eee; border-radius: 8px;" />
-          <p style="font-size: 12px; color: #999; margin-top: 5px;">摩斯扫码</p>
+        <div style="text-align: center; width: 115px;">
+          <img src="/uploads/mosi-qr.png" alt="摩斯二维码" style="width: 100%; display: block; border: 1px solid #f0f0f0; border-radius: 6px;" />
+          <span style="font-size: 11px; color: #999; display: block; margin-top: 6px;">摩斯扫码</span>
         </div>
       </div>
     </td>
   </tr>
 </table>
-
 ---
-
 ### 个人见证
 我曾是一名反感基督教的无神论者。大学期间在团契中感受到关爱，并在抑郁低谷中遇见了神的召唤。在默想巴刻《认识神》中的救恩时，我深切意识到自己是罪人并需要救主耶稣。
 
