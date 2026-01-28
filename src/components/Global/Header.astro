@@ -2,16 +2,23 @@
 import Navigation from "./Navigation.astro";
 ---
 
-<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-24"> <a href="/" class="flex items-center shrink-0 group">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-12 w-auto text-[#D4A373] transition-transform group-hover:scale-110">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-28">
+    
+    <a href="/" class="flex items-center shrink-0 group no-underline">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-14 w-auto text-[#D4A373] mr-4 transition-transform group-hover:scale-105">
         <path fill="currentColor" d="M344 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v46.4L183.3 210c-14.5 8.7-23.3 24.3-23.3 41.2V464c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V251.2c0-16.9-8.8-32.5-23.3-41.2L344 70.4V24zM256 464V336h128v128H256z"/>
       </svg>
-      <span class="text-3xl font-bold text-[#5C5146] tracking-[0.15em] ml-3 font-serif">与光同行</span>
+      
+      <div class="flex flex-col">
+        <span class="text-3xl lg:text-4xl font-bold text-[#5C5146] tracking-[0.2em] font-serif uppercase">与光同行</span>
+        <span class="text-[10px] text-[#D4A373] tracking-[0.5em] mt-1 font-sans opacity-80">WALKING WITH LIGHT</span>
+      </div>
     </a>
 
     <div class="flex items-center">
       <Navigation />
     </div>
+
   </div>
 </header>
